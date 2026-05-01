@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Osi_Gateway_Template",
+        "category": "router",
+        "ram": 512,
+        "qemu_path": "/usr/bin/qemu-system-x86_64",
+        "symbol": ":/symbols/router.svg",
+        "adapters": 4
+    }
+]

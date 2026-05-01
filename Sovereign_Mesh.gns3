@@ -1,0 +1,16 @@
+{
+    "name": "Sovereign_Mesh_Lab",
+    "topology": {
+        "nodes": [
+            { "name": "Osi_Gateway", "node_type": "qemu", "compute_id": "local" },
+            { "name": "Core_Switch", "node_type": "ethernet_switch", "compute_id": "local" },
+            { "name": "IoT_Sensor_01", "node_type": "docker", "properties": { "image": "eclipse-mosquitto:latest" } },
+            { "name": "IoT_Hub_02", "node_type": "docker", "properties": { "image": "nodered/node-red:latest" } }
+        ],
+        "links": [
+            { "nodes": [ { "node_id": "Osi_Gateway", "adapter_number": 1 }, { "node_id": "Core_Switch", "adapter_number": 0 } ] },
+            { "nodes": [ { "node_id": "Core_Switch", "adapter_number": 1 }, { "node_id": "IoT_Sensor_01", "adapter_number": 0 } ] },
+            { "nodes": [ { "node_id": "Core_Switch", "adapter_number": 2 }, { "node_id": "IoT_Hub_02", "adapter_number": 0 } ] }
+        ]
+    }
+}
